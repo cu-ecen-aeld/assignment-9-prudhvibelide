@@ -1,2 +1,1 @@
-# Top-level external Config.in
-source "$BR2_EXTERNAL_PROJECT_BASE_PATH/package/Config.in"
+source "$BR2_EXTERNAL_project_base_PATH/package/aesd-assignments/Config.in"

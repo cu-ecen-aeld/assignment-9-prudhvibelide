@@ -1,0 +1,3 @@
+# Placeholder menu for external packages (will add aesd-assignments later)
+menu "AESD external packages"
+endmenu

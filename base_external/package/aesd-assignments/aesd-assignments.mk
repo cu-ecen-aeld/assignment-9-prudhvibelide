@@ -5,7 +5,7 @@
 ##############################################################
 
 #TODO: Fill up the contents below in order to reference your assignment 3 git contents
-AESD_ASSIGNMENTS_VERSION = '82ee4b6d5938350cd5e484ac0c39fb485c6ec81c'
+AESD_ASSIGNMENTS_VERSION = 7b12f2000e15a253399f8ebc692040bdd151fec9
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
@@ -18,8 +18,9 @@ define AESD_ASSIGNMENTS_BUILD_CMDS
 	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/finder-app all
 
 	# Build socket server (assignment 5) with cross toolchain
-	$(MAKE) -C $(@D)/server clean all \
-		CC="$(TARGET_CC)" CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)"
+	# NOTE: Run clean and build separately to avoid 'clean all' races.
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/server clean
+	$(MAKE) $(TARGET_CONFIGURE_OPTS) -C $(@D)/server all
 endef
 
 # TODO add your writer, finder and finder-test utilities/scripts to the installation steps below

@@ -1,0 +1,4 @@
+config BR2_PACKAGE_LDD
+    bool "ldd"
+    help
+      Builds and installs ldd3 kernel modules (hello, scull, faulty)

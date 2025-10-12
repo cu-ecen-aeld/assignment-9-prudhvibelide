@@ -1,0 +1,2 @@
+source "base_external/package/aesd-assignments/Config.in"
+source "base_external/package/ldd/Config.in"

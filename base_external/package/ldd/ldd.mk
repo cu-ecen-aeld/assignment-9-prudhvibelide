@@ -5,7 +5,7 @@
 ################################################################################
 
 LDD_VERSION = 1.0
-LDD_SITE = /home/prbe/Documents/AESD/Assignment7/assignment-7-prudhvibelide
+LDD_SITE = 'git@github.com:cu-ecen-aeld/assignment-7-prudhvibelide.git'
 LDD_SITE_METHOD = local
 LDD_DEPENDENCIES = linux
 

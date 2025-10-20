@@ -1,0 +1,5 @@
+config BR2_PACKAGE_AESDCHAR
+    bool "AESD character device module"
+    help
+      Builds and installs the AESD character device kernel module.
+

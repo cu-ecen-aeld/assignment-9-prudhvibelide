@@ -1,21 +1,30 @@
-#!/bin/sh
-# Load and unload ldd modules on startup/shutdown
+MODDIR="/lib/modules/$(uname -r)/extra"
 
 case "$1" in
   start)
-    echo "Loading LDD modules..."
-    insmod /lib/modules/$(uname -r)/extra/scull.ko
-    insmod /lib/modules/$(uname -r)/extra/hello.ko
-    insmod /lib/modules/$(uname -r)/extra/faulty.ko
+    echo "S98lddmodules start"
+    ( cd "$MODDIR" && /usr/bin/scull_load )
+    ( cd "$MODDIR" && /usr/bin/module_load faulty)
+    
+    modprobe hello
+    echo "S98lddmodules done"
     ;;
+
   stop)
-    echo "Unloading LDD modules..."
-    rmmod faulty
-    rmmod hello
-    rmmod scull
+
+    echo "S98lddmodules stop"
+    rmmod hello 
+    /usr/bin/module_unload faulty
+    /usr/bin/scull_unload 
+    
+    echo "S98lddmodules done"
     ;;
+
   *)
     echo "Usage: $0 {start|stop}"
     exit 1
     ;;
 esac
+
+exit 0
+

@@ -1,0 +1,30 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          aesdchar
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Load aesdchar module at boot
+### END INIT INFO
+
+case "$1" in
+  start)
+    echo "Loading aesdchar module..."
+    insmod /lib/modules/$(uname -r)/extra/aesdchar.ko
+    ;;
+  stop)
+    echo "Unloading aesdchar module..."
+    rmmod aesdchar
+    ;;
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac
+exit 0

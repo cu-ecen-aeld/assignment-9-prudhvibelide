@@ -4,7 +4,7 @@
 #
 ##############################################################
 
-AESD_ASSIGNMENTS_VERSION = ea277f604937fc0bd1e972678c755cc8f9a3d62d
+AESD_ASSIGNMENTS_VERSION = 482e634d4ea334e65b5c2e8607f7ab6262246807
 AESD_ASSIGNMENTS_SITE = git@github.com:cu-ecen-aeld/assignments-3-and-later-prudhvi-B007.git
 AESD_ASSIGNMENTS_SITE_METHOD = git
 AESD_ASSIGNMENTS_GIT_SUBMODULES = YES
